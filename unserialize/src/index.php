@@ -4,12 +4,11 @@ header("Content-type:text/html;charset=utf-8");
 error_reporting(0);
 show_source("index.php");
 
-class Jiangsir1{
+class Jiangsir{
 
 
         public $admin;
         public $passwd;
-        private $jiangshao;
 
         public function __construct(){
             $this->admin ="user";
@@ -22,8 +21,8 @@ class Jiangsir1{
 
         public function __destruct(){
             if($this->admin === "admin" && $this->passwd === "wllm"){
-                eval($this->jiangshao);
-                
+                include("flag.php");
+                echo $flag;
             }else{
                 echo $this->passwd;
                 echo "No wake up";
